@@ -6,17 +6,16 @@ const BoxGen = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(e.target.value);
-        console.log('userColor:' + userColor);
-        const submitted = true;
+        console.log('userColor:' + '"' + userColor + '"');
+        <div style={squareStyle}></div>;
         
     }
-
+    
     const squareStyle = {
         width: '20px',
         height: '20px',
-        backgroundColor: 'red'
+        backgroundColor: {userColor}
     }
-    const createDiv = <div style={squareStyle}></div>;
 
 
     return (
@@ -27,7 +26,7 @@ const BoxGen = (props) => {
             value={ userColor }
             ></input>
             <button type="submit">Add</button>
-            <div>{createDiv}</div>
+            <div>{handleSubmit}</div>
         </form>
 
 
