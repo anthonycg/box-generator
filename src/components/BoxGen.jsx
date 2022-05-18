@@ -19,7 +19,8 @@ const BoxGen = (props) => {
         console.log(newArray);
         // set array from state to our newly made array
         setColorArr(newArray);
-        
+        // clear out input after submit
+        setUserColor("");
         
     }
     const layout = {
@@ -48,7 +49,7 @@ const BoxGen = (props) => {
             {colorArr.map((newBox, index) => {
                 return (
                     <div style={layout}>
-                        <div style={{backgroundColor: newBox.color, width: "150px", height: "150px"}}>{newBox.color}</div>
+                        <div style={{backgroundColor: newBox.color, width: "150px", height: "150px", borderRadius: "10%"}}>{newBox.color}</div>
                     </div>
                     )
                 })}
