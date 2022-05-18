@@ -22,10 +22,14 @@ const BoxGen = (props) => {
         
         
     }
-    
+    const layout = {
+        display: "inline-block",
+        margin: "10px",
+        flexWrap: "wrap"
+    }
     const squareStyle = {
-        width: '20px',
-        height: '20px',
+        width: '150px',
+        height: '150px',
         backgroundColor: userColor
     }
 
@@ -43,7 +47,9 @@ const BoxGen = (props) => {
             <h2>Boxes</h2>
             {colorArr.map((newBox, index) => {
                 return (
-                    <div style={squareStyle}>{newBox.color}</div>
+                    <div style={layout}>
+                        <div style={{backgroundColor: newBox.color, width: "150px", height: "150px"}}>{newBox.color}</div>
+                    </div>
                     )
                 })}
             </form>
